@@ -1,3 +1,14 @@
+var HElem = document.getElementById('hours');
+var MElem = document.getElementById('minutes');
+var SElem = document.getElementById('seconds');
+var MilElem = document.getElementById('milli');
+var ApElem =  document.getElementById('ap');
+var HmElem = document.getElementById('hm-blink');
+var MsElem = document.getElementById('ms-blink');
+
+HmElem.innerHTML = ":";
+MsElem.innerHTML = ":";
+
 // Creating a function for time 
 function timing() {
       const full = new Date(); //Method for Date time 
@@ -32,20 +43,12 @@ function timing() {
       }
       
       //Injecting time data
-      document.getElementById('hours').innerHTML = hours;
-      document.getElementById('minutes').innerHTML = minutes;
-      document.getElementById('seconds').innerHTML = seconds;
-      document.getElementById('milli').innerHTML = milli;
-      document.getElementById('ap').innerHTML = " " + ap;
-      document.getElementById('hm-blink').innerHTML = ":";
-      document.getElementById('ms-blink').innerHTML = ":";
-
+      HElem.innerHTML = hours;
+      MElem.innerHTML = minutes;
+      SElem.innerHTML = seconds;
+      MilElem.innerHTML = milli;
+      ApElem.innerHTML = " " + ap;
 }
-
-
-
-
-
 
 // Sync the time in real time 
 setInterval(timing, 1);
